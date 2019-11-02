@@ -88,15 +88,13 @@ $priceConsoleControllers = 0.0;
 foreach($consoles as $console)
 {
     $html .= "<tr><td>".get_class($console)."</td><td>".$console->getName()."</td><td>".$console->getPrice()."</td></tr>";
-    $priceConsoleControllers += $console->getPrice();
-
     foreach($console->getControllers() as $controller)
     {
         $html .= "<tr><td>".get_class($controller)."</td><td>".$controller->getName()."</td><td>".$controller->getPrice()."</td></tr>";
-        $priceConsoleControllers += $controller->getPrice();
     }
+    $html .=  "</table><br/><h2>Total console and their controllers: ".$console->getPriceWithExtra."</h2>";
 }
 
-$html .=  "</table><br/><h2>Total console and their controllers: ".$priceConsoleControllers."</h2>";
+
 
 echo $html;

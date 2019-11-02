@@ -81,6 +81,16 @@ class ElectronicItem
         return $this->name;
     }
 
+    public function getPriceWithExtra()
+    {
+        $price = $this->getPrice();
+        foreach($this->getControllers() as $controller)
+        {
+            $price += $controller->getPrice();
+        }
+
+        return $price;
+    }
 
     public static function getTypes(): array
     {
