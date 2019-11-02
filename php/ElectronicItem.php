@@ -88,7 +88,7 @@ class ElectronicItem
         {
             $price += $controller->getPrice();
         }
-
+        
         return $price;
     }
 

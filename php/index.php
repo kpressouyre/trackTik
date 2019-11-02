@@ -92,9 +92,8 @@ foreach($consoles as $console)
     {
         $html .= "<tr><td>".get_class($controller)."</td><td>".$controller->getName()."</td><td>".$controller->getPrice()."</td></tr>";
     }
-    $html .=  "</table><br/><h2>Total console and their controllers: ".$console->getPriceWithExtra."</h2>";
+    $html .=  "</table><br/><h2>Total console and their controllers: ".$console->getPriceWithExtra()."</h2>";
 }
-
 
 
 echo $html;
